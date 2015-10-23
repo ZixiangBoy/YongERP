@@ -12,11 +12,12 @@ using Ultra.Surface.Form;
 using Ultra.Web.Core.Common;
 using DbEntity;
 using Ultra.Surface.Extend;
+using DevExpress.XtraEditors;
 
 namespace Ultra.ReturnGoods {
     public partial class NewView : DialogView {
 
-        private t_trade Trade;
+        private t_rettrade Trade;
 
         public NewView() {
             InitializeComponent();
@@ -29,28 +30,30 @@ namespace Ultra.ReturnGoods {
         private void btnOK_Click(object sender, EventArgs e) {
             if (!dxValidationProvider1.Validate())
                 return;
-            var odrs = gcOrder.GetDataSource<t_order>();
+            var odrs = gcOrder.GetDataSource<t_retorder>();
             if (odrs == null || odrs.Count < 1) {
-                MsgBox.ShowMessage("提示", "没有添加商品不能保存!");
+                MsgBox.ShowMessage("提示", "没有退货商品不能保存退货单!");
+                return;
+            }
+            if (odrs.Any(k=>string.IsNullOrEmpty(k.LocName))) {
+                MsgBox.ShowMessage("提示", "所有商品都必须选择库位!");
                 return;
             }
             if (EditMode == Ultra.Web.Core.Enums.EnViewEditMode.New) {
-                var trdnew = new t_trade() {
-                    Guid = GuidKey,
-                    ReceiverName = Trade.ReceiverName,
-                    ReceiverMobile = Trade.ReceiverMobile,
-                    ReceiverAddress = Trade.ReceiverAddress,
-                    MemberGuid = Trade.Guid,
-                    DeliveryDate = dateDeliveryDate.DateTime,
-                    CreateDate = TimeSync.Default.CurrentSyncTime,
-                    Creator = this.CurUser,
-                };
-
+                var rettrd = this.Trade;
+                rettrd.Guid = Guid.NewGuid();
+                rettrd.Id = 0;
+                rettrd.IsAudit = false;
                 using (var db = new Database()) {
                     try {
                         db.BeginTransaction();
-                        db.Save(trdnew);
-                        odrs.ForEach(k => db.Save(k));
+                        db.Save(rettrd);
+                        odrs.ForEach(k => { 
+                            k.Guid = Guid.NewGuid();
+                            k.Id = 0; 
+                            k.TradeGuid = rettrd.Guid; 
+                            db.Save(k); 
+                        });
                         db.CompleteTransaction();
                     } catch (Exception) {
                         db.AbortTransaction();
@@ -59,7 +62,7 @@ namespace Ultra.ReturnGoods {
                 }
             } else if (EditMode == Ultra.Web.Core.Enums.EnViewEditMode.Edit) {
                 using (var db = new Database()) {
-                    var trd = db.FirstOrDefault<t_trade>(" where guid=@0", GuidKey);
+                    var trd = db.FirstOrDefault<t_rettrade>(" where guid=@0", GuidKey);
                     trd.ReceiverName = Trade.ReceiverName;
                     trd.ReceiverMobile = txtMobile.Text;
                     trd.ReceiverAddress = txtReceiverAddress.Text;
@@ -69,7 +72,7 @@ namespace Ultra.ReturnGoods {
                     try {
                         db.BeginTransaction();
                         db.Save(trd);
-                        db.Execute("delete t_order where tradeguid=@0", trd.Guid);
+                        db.Execute("delete t_retorder where tradeguid=@0", trd.Guid);
                         odrs.ForEach(k => {
                             k.Id = 0;
                             db.Save(k);
@@ -90,71 +93,72 @@ namespace Ultra.ReturnGoods {
             Close();
         }
 
-        private void btnAddOrder_Click(object sender, EventArgs e) {
-            var odrs = gcOrder.GetDataSource<t_order>();
-            odrs = odrs ?? new List<t_order>();
-
-            var newodr = new t_order();
-            newodr.TradeGuid = this.GuidKey;
-            newodr.CreateDate = TimeSync.Default.CurrentSyncTime;
-            newodr.Creator = this.CurUser;
-            odrs.Add(newodr);
-            gcOrder.DataSource = odrs;
-            gcOrder.RefreshDataSource();
-        }
-
-        private void btnDelOrder_Click(object sender, EventArgs e) {
-            gcOrder.RemoveSelected();
-        }
-
-        private void rspItem_EditValueChanged(object sender, EventArgs e) {
-            var gl = sender as DevExpress.XtraEditors.GridLookUpEdit;
-            if (gl == null)
-                return;
-            var view = gl.Properties.View;
-            if (view == null)
-                return;
-            var item = view.GetFocusedDataSource<t_item>();
-            if (item == null)
-                return;
-            var odr = gcOrder.GetFocusedDataSource<t_order>();
-            if (odr == null)
-                return;
-
-            odr.ItemGuid = item.Guid;
-            odr.ItemName = item.ItemName;
-            odr.ItemNo = item.ItemNo;
-            odr.CostPrice = item.CostPrice;
-            odr.Price = item.Price;
-            odr.Num = 1;
-            odr.OrderPrice = item.Price;
-
-            gcOrder.RefreshDataSource();
-        }
-
         private void rspNum_EditValueChanged(object sender, EventArgs e) {
-            var odr = gcOrder.GetFocusedDataSource<t_order>();
+            var odr = gcOrder.GetFocusedDataSource<t_retorder>();
             if (odr == null)
                 return;
             var spn = sender as DevExpress.XtraEditors.SpinEdit;
-            odr.Num = (int)spn.Value;
-            odr.OrderPrice = odr.Price * odr.Num;
+            odr.RetNum = (int)spn.Value;
+            odr.OrderPrice = odr.Price * odr.RetNum;
             gcOrder.RefreshDataSource();
         }
 
-        private void txtMemberName_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e) {
+        private void txtTradeNo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e) {
             var vw = new SendedTradeView();
             if (vw.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
                 this.Trade = vw.Trade;
 
+                txtReceiverName.Text = this.Trade.ReceiverName;
                 dateDeliveryDate.DateTime = this.Trade.DeliveryDate ?? DateTime.Now;
                 txtMobile.Text = this.Trade.ReceiverMobile;
                 txtReceiverAddress.Text = this.Trade.ReceiverAddress;
+                txtTradeNo.Text = this.Trade.TradeNo;
 
                 using (var db = new Database()) {
-                    gcOrder.DataSource = db.Fetch<t_order>("select * from t_order");
+                    var retodrs = db.Fetch<t_retorder>("select * from v_retorder where tradeno=@0", vw.Trade.TradeNo);
+                    retodrs.ForEach(k=>k.RetNum=k.Num);
+                    gcOrder.DataSource = retodrs;
                 }
             }
+        }
+
+        private void gvOrder_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e) {
+            var odr = gcOrder.GetFocusedDataSource<t_retorder>();
+            if (odr == null)
+                return;
+
+            if (odr.RetNum > odr.Num) {
+                e.ErrorText = "退货数量不能大于销售单的数量";
+                e.Valid = false;
+            }
+        }
+
+        private void gvOrder_ShownEditor(object sender, EventArgs e) {
+            var gv = sender as DevExpress.XtraGrid.Views.Grid.GridView;
+            if (gv == null)
+                return;
+            var gc = gv.ActiveEditor as GridLookUpEdit;
+            if (gc == null)
+                return;
+            using (var db = new Database()) {
+                gc.Properties.DataSource = db.Fetch<t_location>(" where isusing=1");
+            }
+        }
+
+        private void rspLoc_EditValueChanged(object sender, EventArgs e) {
+            var odr = gcOrder.GetFocusedDataSource<t_retorder>();
+            if (odr == null)
+                return;
+            var gc = sender as GridLookUpEdit;
+            if (gc == null)
+                return;
+            var loc = gc.Properties.View.GetFocusedDataSource<t_location>();
+            if (loc == null)
+                return;
+            odr.WareName = loc.WareName;
+            odr.AreaName = loc.AreaName;
+            odr.LocName = loc.LocName;
+            gcOrder.RefreshDataSource();
         }
     }
 }

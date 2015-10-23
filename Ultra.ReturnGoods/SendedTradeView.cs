@@ -14,7 +14,7 @@ using Ultra.Surface.Extend;
 
 namespace Ultra.ReturnGoods {
     public partial class SendedTradeView : DialogView {
-        public t_trade Trade { get; set; }
+        public t_rettrade Trade { get; set; }
 
         public SendedTradeView() {
             InitializeComponent();
@@ -22,16 +22,15 @@ namespace Ultra.ReturnGoods {
 
         private void SendedTradeView_Load(object sender, EventArgs e) {
             using (var db = new Database()) {
-                gc.DataSource = db.Fetch<t_trade>(" where isaudit=1");
+                gc.DataSource = db.Fetch<t_rettrade>(@"select * from v_erp_traderet");
             }
         }
-
         private void btnClose_Click(object sender, EventArgs e) {
             Close();
         }
 
         private void btnOK_Click(object sender, EventArgs e) {
-            Trade = gc.GetFocusedDataSource<t_trade>();
+            Trade = gc.GetFocusedDataSource<t_rettrade>();
             if (Trade == null)
                 return;
             DialogResult = System.Windows.Forms.DialogResult.OK;

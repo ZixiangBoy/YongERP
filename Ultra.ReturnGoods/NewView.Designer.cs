@@ -33,7 +33,9 @@ namespace Ultra.ReturnGoods
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.txtMemberName = new DevExpress.XtraEditors.ButtonEdit();
+            this.txtReceiverName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTradeNo = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.dateDeliveryDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -47,16 +49,21 @@ namespace Ultra.ReturnGoods
             this.gcOrder = new Ultra.Surface.Controls.GridControlEx();
             this.gvOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rspItem = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rspNum = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rspLoc = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pnlMain)).BeginInit();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlFill)).BeginInit();
@@ -66,7 +73,8 @@ namespace Ultra.ReturnGoods
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMemberName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReceiverName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTradeNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDeliveryDate.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDeliveryDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReceiverAddress.Properties)).BeginInit();
@@ -78,9 +86,9 @@ namespace Ultra.ReturnGoods
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rspItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rspNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rspLoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -123,7 +131,9 @@ namespace Ultra.ReturnGoods
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.txtMemberName);
+            this.panelControl1.Controls.Add(this.txtReceiverName);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.txtTradeNo);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.dateDeliveryDate);
             this.panelControl1.Controls.Add(this.labelControl6);
@@ -137,16 +147,32 @@ namespace Ultra.ReturnGoods
             this.panelControl1.Size = new System.Drawing.Size(916, 59);
             this.panelControl1.TabIndex = 0;
             // 
-            // txtMemberName
+            // txtReceiverName
             // 
-            this.txtMemberName.Location = new System.Drawing.Point(73, 6);
-            this.txtMemberName.Name = "txtMemberName";
-            this.txtMemberName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtReceiverName.Location = new System.Drawing.Point(332, 6);
+            this.txtReceiverName.Name = "txtReceiverName";
+            this.txtReceiverName.Properties.ReadOnly = true;
+            this.txtReceiverName.Size = new System.Drawing.Size(143, 20);
+            this.txtReceiverName.TabIndex = 31;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(278, 9);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(48, 14);
+            this.labelControl1.TabIndex = 30;
+            this.labelControl1.Text = "顾客姓名";
+            // 
+            // txtTradeNo
+            // 
+            this.txtTradeNo.Location = new System.Drawing.Point(73, 6);
+            this.txtTradeNo.Name = "txtTradeNo";
+            this.txtTradeNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txtMemberName.Properties.ReadOnly = true;
-            this.txtMemberName.Size = new System.Drawing.Size(199, 20);
-            this.txtMemberName.TabIndex = 29;
-            this.txtMemberName.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtMemberName_ButtonClick);
+            this.txtTradeNo.Properties.ReadOnly = true;
+            this.txtTradeNo.Size = new System.Drawing.Size(199, 20);
+            this.txtTradeNo.TabIndex = 29;
+            this.txtTradeNo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtTradeNo_ButtonClick);
             // 
             // labelControl2
             // 
@@ -159,7 +185,7 @@ namespace Ultra.ReturnGoods
             // dateDeliveryDate
             // 
             this.dateDeliveryDate.EditValue = null;
-            this.dateDeliveryDate.Location = new System.Drawing.Point(544, 7);
+            this.dateDeliveryDate.Location = new System.Drawing.Point(743, 7);
             this.dateDeliveryDate.Name = "dateDeliveryDate";
             this.dateDeliveryDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -172,7 +198,7 @@ namespace Ultra.ReturnGoods
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(490, 9);
+            this.labelControl6.Location = new System.Drawing.Point(689, 9);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(48, 14);
             this.labelControl6.TabIndex = 26;
@@ -182,19 +208,21 @@ namespace Ultra.ReturnGoods
             // 
             this.txtReceiverAddress.Location = new System.Drawing.Point(73, 32);
             this.txtReceiverAddress.Name = "txtReceiverAddress";
-            this.txtReceiverAddress.Size = new System.Drawing.Size(635, 20);
+            this.txtReceiverAddress.Properties.ReadOnly = true;
+            this.txtReceiverAddress.Size = new System.Drawing.Size(836, 20);
             this.txtReceiverAddress.TabIndex = 25;
             // 
             // txtMobile
             // 
-            this.txtMobile.Location = new System.Drawing.Point(332, 7);
+            this.txtMobile.Location = new System.Drawing.Point(538, 6);
             this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(152, 20);
+            this.txtMobile.Properties.ReadOnly = true;
+            this.txtMobile.Size = new System.Drawing.Size(142, 20);
             this.txtMobile.TabIndex = 24;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(278, 10);
+            this.labelControl4.Location = new System.Drawing.Point(481, 9);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(48, 14);
             this.labelControl4.TabIndex = 23;
@@ -243,8 +271,8 @@ namespace Ultra.ReturnGoods
             this.gcOrder.MainView = this.gvOrder;
             this.gcOrder.Name = "gcOrder";
             this.gcOrder.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.rspItem,
-            this.rspNum});
+            this.rspNum,
+            this.rspLoc});
             this.gcOrder.ShowIndicator = true;
             this.gcOrder.ShowRowNumber = true;
             this.gcOrder.Size = new System.Drawing.Size(906, 366);
@@ -263,8 +291,12 @@ namespace Ultra.ReturnGoods
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn6,
+            this.gridColumn7,
             this.gridColumn4,
-            this.gridColumn5});
+            this.gridColumn5,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10});
             this.gvOrder.GridControl = this.gcOrder;
             this.gvOrder.Name = "gvOrder";
             this.gvOrder.OptionsView.ColumnAutoWidth = false;
@@ -273,6 +305,8 @@ namespace Ultra.ReturnGoods
             this.gvOrder.OptionsView.ShowAutoFilterRow = true;
             this.gvOrder.OptionsView.ShowFooter = true;
             this.gvOrder.OptionsView.ShowGroupPanel = false;
+            this.gvOrder.ShownEditor += new System.EventHandler(this.gvOrder_ShownEditor);
+            this.gvOrder.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gvOrder_ValidatingEditor);
             // 
             // gridColumn1
             // 
@@ -282,44 +316,6 @@ namespace Ultra.ReturnGoods
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            // 
-            // rspItem
-            // 
-            this.rspItem.AutoHeight = false;
-            this.rspItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rspItem.DisplayMember = "ItemName";
-            this.rspItem.Name = "rspItem";
-            this.rspItem.ValueMember = "ItemName";
-            this.rspItem.View = this.repositoryItemGridLookUpEdit1View;
-            this.rspItem.EditValueChanged += new System.EventHandler(this.rspItem_EditValueChanged);
-            // 
-            // repositoryItemGridLookUpEdit1View
-            // 
-            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn8,
-            this.gridColumn9});
-            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
-            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
-            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "货物名称";
-            this.gridColumn8.FieldName = "ItemName";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 0;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "货物编号";
-            this.gridColumn9.FieldName = "ItemNo";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 1;
             // 
             // gridColumn2
             // 
@@ -348,14 +344,23 @@ namespace Ultra.ReturnGoods
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
             // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "数量";
+            this.gridColumn7.FieldName = "Num";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 4;
+            // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "数量";
+            this.gridColumn4.Caption = "退货数量";
             this.gridColumn4.ColumnEdit = this.rspNum;
-            this.gridColumn4.FieldName = "Num";
+            this.gridColumn4.FieldName = "RetNum";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.VisibleIndex = 5;
             // 
             // rspNum
             // 
@@ -384,8 +389,82 @@ namespace Ultra.ReturnGoods
             this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "OrderPrice", "总金额:{0}")});
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.VisibleIndex = 6;
             this.gridColumn5.Width = 150;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "仓库";
+            this.gridColumn8.FieldName = "WareName";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 7;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "区域";
+            this.gridColumn9.FieldName = "AreaName";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 8;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "库位";
+            this.gridColumn10.ColumnEdit = this.rspLoc;
+            this.gridColumn10.FieldName = "LocName";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 9;
+            // 
+            // rspLoc
+            // 
+            this.rspLoc.AutoHeight = false;
+            this.rspLoc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rspLoc.DisplayMember = "LocName";
+            this.rspLoc.Name = "rspLoc";
+            this.rspLoc.NullText = "";
+            this.rspLoc.ValueMember = "LocName";
+            this.rspLoc.View = this.repositoryItemGridLookUpEdit1View;
+            this.rspLoc.EditValueChanged += new System.EventHandler(this.rspLoc_EditValueChanged);
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn13,
+            this.gridColumn11,
+            this.gridColumn12});
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "仓库";
+            this.gridColumn13.FieldName = "WareName";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 0;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "区域";
+            this.gridColumn11.FieldName = "AreaName";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 1;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "库位";
+            this.gridColumn12.FieldName = "LocName";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 2;
             // 
             // NewView
             // 
@@ -408,7 +487,8 @@ namespace Ultra.ReturnGoods
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMemberName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReceiverName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTradeNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDeliveryDate.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDeliveryDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReceiverAddress.Properties)).EndInit();
@@ -420,9 +500,9 @@ namespace Ultra.ReturnGoods
             this.xtraTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rspItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rspNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rspLoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -441,15 +521,10 @@ namespace Ultra.ReturnGoods
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit rspItem;
-        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit rspNum;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private ButtonEdit txtMemberName;
+        private ButtonEdit txtTradeNo;
         private LabelControl labelControl2;
         private DateEdit dateDeliveryDate;
         private LabelControl labelControl6;
@@ -457,5 +532,17 @@ namespace Ultra.ReturnGoods
         private TextEdit txtMobile;
         private LabelControl labelControl4;
         private LabelControl labelControl3;
+        private TextEdit txtReceiverName;
+        private LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit rspLoc;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
     }
 }

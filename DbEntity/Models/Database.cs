@@ -136,6 +136,303 @@ namespace DbEntity
 	
 
     
+	[TableName("t_ordergoodsview")]
+	[PrimaryKey("Id")]
+	[ExplicitColumns]
+	[Serializable]
+    public partial class t_ordergoodsview : DbEntityDB.Record<t_ordergoodsview>  
+    {
+
+        [System.Xml.Serialization.XmlElement("Id")]
+        [Column] 
+		public int Id 
+		{ 
+			get
+			{
+				return _Id;
+			}
+			set
+			{
+				_Id = value;
+				MarkColumnModified("Id");
+			}
+		}
+		int _Id;
+
+
+        [System.Xml.Serialization.XmlElement("Guid")]
+        [Column] 
+		public Guid Guid 
+		{ 
+			get
+			{
+				return _Guid;
+			}
+			set
+			{
+				_Guid = value;
+				MarkColumnModified("Guid");
+			}
+		}
+		Guid _Guid;
+
+
+        [System.Xml.Serialization.XmlElement("TradeGuid")]
+        [Column] 
+		public Guid TradeGuid 
+		{ 
+			get
+			{
+				return _TradeGuid;
+			}
+			set
+			{
+				_TradeGuid = value;
+				MarkColumnModified("TradeGuid");
+			}
+		}
+		Guid _TradeGuid;
+
+
+        [System.Xml.Serialization.XmlElement("ItemName")]
+        [Column] 
+		public string ItemName 
+		{ 
+			get
+			{
+				return _ItemName;
+			}
+			set
+			{
+				_ItemName = value;
+				MarkColumnModified("ItemName");
+			}
+		}
+		string _ItemName;
+
+
+        [System.Xml.Serialization.XmlElement("ItemNo")]
+        [Column] 
+		public string ItemNo 
+		{ 
+			get
+			{
+				return _ItemNo;
+			}
+			set
+			{
+				_ItemNo = value;
+				MarkColumnModified("ItemNo");
+			}
+		}
+		string _ItemNo;
+
+
+        [System.Xml.Serialization.XmlElement("Price")]
+        [Column] 
+		public decimal Price 
+		{ 
+			get
+			{
+				return _Price;
+			}
+			set
+			{
+				_Price = value;
+				MarkColumnModified("Price");
+			}
+		}
+		decimal _Price;
+
+
+        [System.Xml.Serialization.XmlElement("CostPrice")]
+        [Column] 
+		public decimal CostPrice 
+		{ 
+			get
+			{
+				return _CostPrice;
+			}
+			set
+			{
+				_CostPrice = value;
+				MarkColumnModified("CostPrice");
+			}
+		}
+		decimal _CostPrice;
+
+
+        [System.Xml.Serialization.XmlElement("OrderPrice")]
+        [Column] 
+		public decimal OrderPrice 
+		{ 
+			get
+			{
+				return _OrderPrice;
+			}
+			set
+			{
+				_OrderPrice = value;
+				MarkColumnModified("OrderPrice");
+			}
+		}
+		decimal _OrderPrice;
+
+
+        [System.Xml.Serialization.XmlElement("Num")]
+        [Column] 
+		public int Num 
+		{ 
+			get
+			{
+				return _Num;
+			}
+			set
+			{
+				_Num = value;
+				MarkColumnModified("Num");
+			}
+		}
+		int _Num;
+
+
+        [System.Xml.Serialization.XmlElement("Qty")]
+        [Column] 
+		public int Qty 
+		{ 
+			get
+			{
+				return _Qty;
+			}
+			set
+			{
+				_Qty = value;
+				MarkColumnModified("Qty");
+			}
+		}
+		int _Qty;
+
+
+        [System.Xml.Serialization.XmlElement("WareName")]
+        [Column] 
+		public string WareName 
+		{ 
+			get
+			{
+				return _WareName;
+			}
+			set
+			{
+				_WareName = value;
+				MarkColumnModified("WareName");
+			}
+		}
+		string _WareName;
+
+
+        [System.Xml.Serialization.XmlElement("AreaName")]
+        [Column] 
+		public string AreaName 
+		{ 
+			get
+			{
+				return _AreaName;
+			}
+			set
+			{
+				_AreaName = value;
+				MarkColumnModified("AreaName");
+			}
+		}
+		string _AreaName;
+
+
+        [System.Xml.Serialization.XmlElement("LocName")]
+        [Column] 
+		public string LocName 
+		{ 
+			get
+			{
+				return _LocName;
+			}
+			set
+			{
+				_LocName = value;
+				MarkColumnModified("LocName");
+			}
+		}
+		string _LocName;
+
+
+        [System.Xml.Serialization.XmlElement("Remark")]
+        [Column] 
+		public string Remark 
+		{ 
+			get
+			{
+				return _Remark;
+			}
+			set
+			{
+				_Remark = value;
+				MarkColumnModified("Remark");
+			}
+		}
+		string _Remark;
+
+
+        [System.Xml.Serialization.XmlElement("CreateDate")]
+        [Column] 
+		public DateTime CreateDate 
+		{ 
+			get
+			{
+				return _CreateDate;
+			}
+			set
+			{
+				_CreateDate = value;
+				MarkColumnModified("CreateDate");
+			}
+		}
+		DateTime _CreateDate;
+
+
+        [System.Xml.Serialization.XmlElement("Creator")]
+        [Column] 
+		public string Creator 
+		{ 
+			get
+			{
+				return _Creator;
+			}
+			set
+			{
+				_Creator = value;
+				MarkColumnModified("Creator");
+			}
+		}
+		string _Creator;
+
+
+        [System.Xml.Serialization.XmlElement("TimeStamp")]
+        [Column] 
+		public byte[] TimeStamp 
+		{ 
+			get
+			{
+				return _TimeStamp;
+			}
+			set
+			{
+				_TimeStamp = value;
+				MarkColumnModified("TimeStamp");
+			}
+		}
+		byte[] _TimeStamp;
+
+	}
+    
 	[TableName("t_adjinvt")]
 	[PrimaryKey("Id")]
 	[ExplicitColumns]
@@ -701,6 +998,583 @@ namespace DbEntity
 			}
 		}
 		string _OuterNo;
+
+	}
+    
+	[TableName("t_rettrade")]
+	[PrimaryKey("Id")]
+	[ExplicitColumns]
+	[Serializable]
+    public partial class t_rettrade : DbEntityDB.Record<t_rettrade>  
+    {
+
+        [System.Xml.Serialization.XmlElement("Id")]
+        [Column] 
+		public int Id 
+		{ 
+			get
+			{
+				return _Id;
+			}
+			set
+			{
+				_Id = value;
+				MarkColumnModified("Id");
+			}
+		}
+		int _Id;
+
+
+        [System.Xml.Serialization.XmlElement("Guid")]
+        [Column] 
+		public Guid Guid 
+		{ 
+			get
+			{
+				return _Guid;
+			}
+			set
+			{
+				_Guid = value;
+				MarkColumnModified("Guid");
+			}
+		}
+		Guid _Guid;
+
+
+        [System.Xml.Serialization.XmlElement("ReceiverName")]
+        [Column] 
+		public string ReceiverName 
+		{ 
+			get
+			{
+				return _ReceiverName;
+			}
+			set
+			{
+				_ReceiverName = value;
+				MarkColumnModified("ReceiverName");
+			}
+		}
+		string _ReceiverName;
+
+
+        [System.Xml.Serialization.XmlElement("ReceiverMobile")]
+        [Column] 
+		public string ReceiverMobile 
+		{ 
+			get
+			{
+				return _ReceiverMobile;
+			}
+			set
+			{
+				_ReceiverMobile = value;
+				MarkColumnModified("ReceiverMobile");
+			}
+		}
+		string _ReceiverMobile;
+
+
+        [System.Xml.Serialization.XmlElement("ReceiverAddress")]
+        [Column] 
+		public string ReceiverAddress 
+		{ 
+			get
+			{
+				return _ReceiverAddress;
+			}
+			set
+			{
+				_ReceiverAddress = value;
+				MarkColumnModified("ReceiverAddress");
+			}
+		}
+		string _ReceiverAddress;
+
+
+        [System.Xml.Serialization.XmlElement("MemberGuid")]
+        [Column] 
+		public Guid? MemberGuid 
+		{ 
+			get
+			{
+				return _MemberGuid;
+			}
+			set
+			{
+				_MemberGuid = value;
+				MarkColumnModified("MemberGuid");
+			}
+		}
+		Guid? _MemberGuid;
+
+
+        [System.Xml.Serialization.XmlElement("DeliveryDate")]
+        [Column] 
+		public DateTime? DeliveryDate 
+		{ 
+			get
+			{
+				return _DeliveryDate;
+			}
+			set
+			{
+				_DeliveryDate = value;
+				MarkColumnModified("DeliveryDate");
+			}
+		}
+		DateTime? _DeliveryDate;
+
+
+        [System.Xml.Serialization.XmlElement("Reminder")]
+        [Column] 
+		public string Reminder 
+		{ 
+			get
+			{
+				return _Reminder;
+			}
+			set
+			{
+				_Reminder = value;
+				MarkColumnModified("Reminder");
+			}
+		}
+		string _Reminder;
+
+
+        [System.Xml.Serialization.XmlElement("Remark")]
+        [Column] 
+		public string Remark 
+		{ 
+			get
+			{
+				return _Remark;
+			}
+			set
+			{
+				_Remark = value;
+				MarkColumnModified("Remark");
+			}
+		}
+		string _Remark;
+
+
+        [System.Xml.Serialization.XmlElement("CreateDate")]
+        [Column] 
+		public DateTime CreateDate 
+		{ 
+			get
+			{
+				return _CreateDate;
+			}
+			set
+			{
+				_CreateDate = value;
+				MarkColumnModified("CreateDate");
+			}
+		}
+		DateTime _CreateDate;
+
+
+        [System.Xml.Serialization.XmlElement("Creator")]
+        [Column] 
+		public string Creator 
+		{ 
+			get
+			{
+				return _Creator;
+			}
+			set
+			{
+				_Creator = value;
+				MarkColumnModified("Creator");
+			}
+		}
+		string _Creator;
+
+
+        [System.Xml.Serialization.XmlElement("IsAudit")]
+        [Column] 
+		public bool? IsAudit 
+		{ 
+			get
+			{
+				return _IsAudit;
+			}
+			set
+			{
+				_IsAudit = value;
+				MarkColumnModified("IsAudit");
+			}
+		}
+		bool? _IsAudit;
+
+
+        [System.Xml.Serialization.XmlElement("IsInvalid")]
+        [Column] 
+		public bool? IsInvalid 
+		{ 
+			get
+			{
+				return _IsInvalid;
+			}
+			set
+			{
+				_IsInvalid = value;
+				MarkColumnModified("IsInvalid");
+			}
+		}
+		bool? _IsInvalid;
+
+
+        [System.Xml.Serialization.XmlElement("TimeStamp")]
+        [Column] 
+		public byte[] TimeStamp 
+		{ 
+			get
+			{
+				return _TimeStamp;
+			}
+			set
+			{
+				_TimeStamp = value;
+				MarkColumnModified("TimeStamp");
+			}
+		}
+		byte[] _TimeStamp;
+
+
+        [System.Xml.Serialization.XmlElement("TradeNo")]
+        [Column] 
+		public string TradeNo 
+		{ 
+			get
+			{
+				return _TradeNo;
+			}
+			set
+			{
+				_TradeNo = value;
+				MarkColumnModified("TradeNo");
+			}
+		}
+		string _TradeNo;
+
+	}
+    
+	[TableName("t_retorder")]
+	[PrimaryKey("Id")]
+	[ExplicitColumns]
+	[Serializable]
+    public partial class t_retorder : DbEntityDB.Record<t_retorder>  
+    {
+
+        [System.Xml.Serialization.XmlElement("Id")]
+        [Column] 
+		public int Id 
+		{ 
+			get
+			{
+				return _Id;
+			}
+			set
+			{
+				_Id = value;
+				MarkColumnModified("Id");
+			}
+		}
+		int _Id;
+
+
+        [System.Xml.Serialization.XmlElement("Guid")]
+        [Column] 
+		public Guid Guid 
+		{ 
+			get
+			{
+				return _Guid;
+			}
+			set
+			{
+				_Guid = value;
+				MarkColumnModified("Guid");
+			}
+		}
+		Guid _Guid;
+
+
+        [System.Xml.Serialization.XmlElement("TradeGuid")]
+        [Column] 
+		public Guid TradeGuid 
+		{ 
+			get
+			{
+				return _TradeGuid;
+			}
+			set
+			{
+				_TradeGuid = value;
+				MarkColumnModified("TradeGuid");
+			}
+		}
+		Guid _TradeGuid;
+
+
+        [System.Xml.Serialization.XmlElement("ItemGuid")]
+        [Column] 
+		public Guid ItemGuid 
+		{ 
+			get
+			{
+				return _ItemGuid;
+			}
+			set
+			{
+				_ItemGuid = value;
+				MarkColumnModified("ItemGuid");
+			}
+		}
+		Guid _ItemGuid;
+
+
+        [System.Xml.Serialization.XmlElement("ItemName")]
+        [Column] 
+		public string ItemName 
+		{ 
+			get
+			{
+				return _ItemName;
+			}
+			set
+			{
+				_ItemName = value;
+				MarkColumnModified("ItemName");
+			}
+		}
+		string _ItemName;
+
+
+        [System.Xml.Serialization.XmlElement("ItemNo")]
+        [Column] 
+		public string ItemNo 
+		{ 
+			get
+			{
+				return _ItemNo;
+			}
+			set
+			{
+				_ItemNo = value;
+				MarkColumnModified("ItemNo");
+			}
+		}
+		string _ItemNo;
+
+
+        [System.Xml.Serialization.XmlElement("Price")]
+        [Column] 
+		public decimal Price 
+		{ 
+			get
+			{
+				return _Price;
+			}
+			set
+			{
+				_Price = value;
+				MarkColumnModified("Price");
+			}
+		}
+		decimal _Price;
+
+
+        [System.Xml.Serialization.XmlElement("CostPrice")]
+        [Column] 
+		public decimal CostPrice 
+		{ 
+			get
+			{
+				return _CostPrice;
+			}
+			set
+			{
+				_CostPrice = value;
+				MarkColumnModified("CostPrice");
+			}
+		}
+		decimal _CostPrice;
+
+
+        [System.Xml.Serialization.XmlElement("OrderPrice")]
+        [Column] 
+		public decimal OrderPrice 
+		{ 
+			get
+			{
+				return _OrderPrice;
+			}
+			set
+			{
+				_OrderPrice = value;
+				MarkColumnModified("OrderPrice");
+			}
+		}
+		decimal _OrderPrice;
+
+
+        [System.Xml.Serialization.XmlElement("Num")]
+        [Column] 
+		public int Num 
+		{ 
+			get
+			{
+				return _Num;
+			}
+			set
+			{
+				_Num = value;
+				MarkColumnModified("Num");
+			}
+		}
+		int _Num;
+
+
+        [System.Xml.Serialization.XmlElement("RetNum")]
+        [Column] 
+		public int RetNum 
+		{ 
+			get
+			{
+				return _RetNum;
+			}
+			set
+			{
+				_RetNum = value;
+				MarkColumnModified("RetNum");
+			}
+		}
+		int _RetNum;
+
+
+        [System.Xml.Serialization.XmlElement("Remark")]
+        [Column] 
+		public string Remark 
+		{ 
+			get
+			{
+				return _Remark;
+			}
+			set
+			{
+				_Remark = value;
+				MarkColumnModified("Remark");
+			}
+		}
+		string _Remark;
+
+
+        [System.Xml.Serialization.XmlElement("CreateDate")]
+        [Column] 
+		public DateTime CreateDate 
+		{ 
+			get
+			{
+				return _CreateDate;
+			}
+			set
+			{
+				_CreateDate = value;
+				MarkColumnModified("CreateDate");
+			}
+		}
+		DateTime _CreateDate;
+
+
+        [System.Xml.Serialization.XmlElement("Creator")]
+        [Column] 
+		public string Creator 
+		{ 
+			get
+			{
+				return _Creator;
+			}
+			set
+			{
+				_Creator = value;
+				MarkColumnModified("Creator");
+			}
+		}
+		string _Creator;
+
+
+        [System.Xml.Serialization.XmlElement("TimeStamp")]
+        [Column] 
+		public byte[] TimeStamp 
+		{ 
+			get
+			{
+				return _TimeStamp;
+			}
+			set
+			{
+				_TimeStamp = value;
+				MarkColumnModified("TimeStamp");
+			}
+		}
+		byte[] _TimeStamp;
+
+
+        [System.Xml.Serialization.XmlElement("WareName")]
+        [Column] 
+		public string WareName 
+		{ 
+			get
+			{
+				return _WareName;
+			}
+			set
+			{
+				_WareName = value;
+				MarkColumnModified("WareName");
+			}
+		}
+		string _WareName;
+
+
+        [System.Xml.Serialization.XmlElement("AreaName")]
+        [Column] 
+		public string AreaName 
+		{ 
+			get
+			{
+				return _AreaName;
+			}
+			set
+			{
+				_AreaName = value;
+				MarkColumnModified("AreaName");
+			}
+		}
+		string _AreaName;
+
+
+        [System.Xml.Serialization.XmlElement("LocName")]
+        [Column] 
+		public string LocName 
+		{ 
+			get
+			{
+				return _LocName;
+			}
+			set
+			{
+				_LocName = value;
+				MarkColumnModified("LocName");
+			}
+		}
+		string _LocName;
 
 	}
     
@@ -2583,6 +3457,23 @@ namespace DbEntity
 		}
 		byte[] _TimeStamp;
 
+
+        [System.Xml.Serialization.XmlElement("TradeNo")]
+        [Column] 
+		public string TradeNo 
+		{ 
+			get
+			{
+				return _TradeNo;
+			}
+			set
+			{
+				_TradeNo = value;
+				MarkColumnModified("TradeNo");
+			}
+		}
+		string _TradeNo;
+
 	}
     
 	[TableName("t_inventory")]
@@ -4456,320 +5347,6 @@ namespace DbEntity
 			}
 		}
 		int _Num;
-
-
-        [System.Xml.Serialization.XmlElement("Remark")]
-        [Column] 
-		public string Remark 
-		{ 
-			get
-			{
-				return _Remark;
-			}
-			set
-			{
-				_Remark = value;
-				MarkColumnModified("Remark");
-			}
-		}
-		string _Remark;
-
-
-        [System.Xml.Serialization.XmlElement("CreateDate")]
-        [Column] 
-		public DateTime CreateDate 
-		{ 
-			get
-			{
-				return _CreateDate;
-			}
-			set
-			{
-				_CreateDate = value;
-				MarkColumnModified("CreateDate");
-			}
-		}
-		DateTime _CreateDate;
-
-
-        [System.Xml.Serialization.XmlElement("Creator")]
-        [Column] 
-		public string Creator 
-		{ 
-			get
-			{
-				return _Creator;
-			}
-			set
-			{
-				_Creator = value;
-				MarkColumnModified("Creator");
-			}
-		}
-		string _Creator;
-
-
-        [System.Xml.Serialization.XmlElement("TimeStamp")]
-        [Column] 
-		public byte[] TimeStamp 
-		{ 
-			get
-			{
-				return _TimeStamp;
-			}
-			set
-			{
-				_TimeStamp = value;
-				MarkColumnModified("TimeStamp");
-			}
-		}
-		byte[] _TimeStamp;
-
-	}
-    
-	[TableName("t_ordergoodsview")]
-	[PrimaryKey("Id")]
-	[ExplicitColumns]
-	[Serializable]
-    public partial class t_ordergoodsview : DbEntityDB.Record<t_ordergoodsview>  
-    {
-
-        [System.Xml.Serialization.XmlElement("Id")]
-        [Column] 
-		public int Id 
-		{ 
-			get
-			{
-				return _Id;
-			}
-			set
-			{
-				_Id = value;
-				MarkColumnModified("Id");
-			}
-		}
-		int _Id;
-
-
-        [System.Xml.Serialization.XmlElement("Guid")]
-        [Column] 
-		public Guid Guid 
-		{ 
-			get
-			{
-				return _Guid;
-			}
-			set
-			{
-				_Guid = value;
-				MarkColumnModified("Guid");
-			}
-		}
-		Guid _Guid;
-
-
-        [System.Xml.Serialization.XmlElement("TradeGuid")]
-        [Column] 
-		public Guid TradeGuid 
-		{ 
-			get
-			{
-				return _TradeGuid;
-			}
-			set
-			{
-				_TradeGuid = value;
-				MarkColumnModified("TradeGuid");
-			}
-		}
-		Guid _TradeGuid;
-
-
-        [System.Xml.Serialization.XmlElement("ItemGuid")]
-        [Column] 
-		public Guid ItemGuid 
-		{ 
-			get
-			{
-				return _ItemGuid;
-			}
-			set
-			{
-				_ItemGuid = value;
-				MarkColumnModified("ItemGuid");
-			}
-		}
-		Guid _ItemGuid;
-
-
-        [System.Xml.Serialization.XmlElement("ItemName")]
-        [Column] 
-		public string ItemName 
-		{ 
-			get
-			{
-				return _ItemName;
-			}
-			set
-			{
-				_ItemName = value;
-				MarkColumnModified("ItemName");
-			}
-		}
-		string _ItemName;
-
-
-        [System.Xml.Serialization.XmlElement("ItemNo")]
-        [Column] 
-		public string ItemNo 
-		{ 
-			get
-			{
-				return _ItemNo;
-			}
-			set
-			{
-				_ItemNo = value;
-				MarkColumnModified("ItemNo");
-			}
-		}
-		string _ItemNo;
-
-
-        [System.Xml.Serialization.XmlElement("Price")]
-        [Column] 
-		public decimal Price 
-		{ 
-			get
-			{
-				return _Price;
-			}
-			set
-			{
-				_Price = value;
-				MarkColumnModified("Price");
-			}
-		}
-		decimal _Price;
-
-
-        [System.Xml.Serialization.XmlElement("CostPrice")]
-        [Column] 
-		public decimal CostPrice 
-		{ 
-			get
-			{
-				return _CostPrice;
-			}
-			set
-			{
-				_CostPrice = value;
-				MarkColumnModified("CostPrice");
-			}
-		}
-		decimal _CostPrice;
-
-
-        [System.Xml.Serialization.XmlElement("OrderPrice")]
-        [Column] 
-		public decimal OrderPrice 
-		{ 
-			get
-			{
-				return _OrderPrice;
-			}
-			set
-			{
-				_OrderPrice = value;
-				MarkColumnModified("OrderPrice");
-			}
-		}
-		decimal _OrderPrice;
-
-
-        [System.Xml.Serialization.XmlElement("Num")]
-        [Column] 
-		public int Num 
-		{ 
-			get
-			{
-				return _Num;
-			}
-			set
-			{
-				_Num = value;
-				MarkColumnModified("Num");
-			}
-		}
-		int _Num;
-
-
-        [System.Xml.Serialization.XmlElement("Qty")]
-        [Column] 
-		public int Qty 
-		{ 
-			get
-			{
-				return _Qty;
-			}
-			set
-			{
-				_Qty = value;
-				MarkColumnModified("Qty");
-			}
-		}
-		int _Qty;
-
-
-        [System.Xml.Serialization.XmlElement("WareName")]
-        [Column] 
-		public string WareName 
-		{ 
-			get
-			{
-				return _WareName;
-			}
-			set
-			{
-				_WareName = value;
-				MarkColumnModified("WareName");
-			}
-		}
-		string _WareName;
-
-
-        [System.Xml.Serialization.XmlElement("AreaName")]
-        [Column] 
-		public string AreaName 
-		{ 
-			get
-			{
-				return _AreaName;
-			}
-			set
-			{
-				_AreaName = value;
-				MarkColumnModified("AreaName");
-			}
-		}
-		string _AreaName;
-
-
-        [System.Xml.Serialization.XmlElement("LocName")]
-        [Column] 
-		public string LocName 
-		{ 
-			get
-			{
-				return _LocName;
-			}
-			set
-			{
-				_LocName = value;
-				MarkColumnModified("LocName");
-			}
-		}
-		string _LocName;
 
 
         [System.Xml.Serialization.XmlElement("Remark")]

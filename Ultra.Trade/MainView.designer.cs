@@ -60,13 +60,16 @@
             this.gvOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnlDetail = new DevExpress.XtraEditors.PanelControl();
             this.collapsibleSplitter1 = new Ultra.Surface.Controls.CollapsibleSplitter();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcUnSub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvUnSub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
@@ -113,6 +116,7 @@
             this.gvUnSub.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(80)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.gvUnSub.Appearance.SelectedRow.Options.UseBackColor = true;
             this.gvUnSub.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn8,
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -133,7 +137,7 @@
             this.gridColumn1.FieldName = "ReceiverName";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.VisibleIndex = 1;
             // 
             // gridColumn2
             // 
@@ -141,7 +145,7 @@
             this.gridColumn2.FieldName = "ReceiverMobile";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
@@ -149,7 +153,7 @@
             this.gridColumn3.FieldName = "ReceiverAddress";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 3;
             // 
             // gridColumn24
             // 
@@ -157,7 +161,7 @@
             this.gridColumn24.FieldName = "Creator";
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 3;
+            this.gridColumn24.VisibleIndex = 4;
             // 
             // gridColumn4
             // 
@@ -167,7 +171,7 @@
             this.gridColumn4.FieldName = "CreateDate";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.VisibleIndex = 5;
             // 
             // tabMain
             // 
@@ -205,6 +209,7 @@
             this.gcSubed.Location = new System.Drawing.Point(0, 0);
             this.gcSubed.MainView = this.gvSubed;
             this.gcSubed.Name = "gcSubed";
+            this.gcSubed.ShowIndicator = true;
             this.gcSubed.ShowRowNumber = true;
             this.gcSubed.Size = new System.Drawing.Size(624, 227);
             this.gcSubed.TabIndex = 5;
@@ -218,6 +223,7 @@
             this.gvSubed.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(80)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.gvSubed.Appearance.SelectedRow.Options.UseBackColor = true;
             this.gvSubed.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn13,
             this.gridColumn5,
             this.gridColumn7,
             this.gridColumn9,
@@ -238,7 +244,7 @@
             this.gridColumn5.FieldName = "ReceiverName";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 0;
+            this.gridColumn5.VisibleIndex = 1;
             // 
             // gridColumn7
             // 
@@ -246,7 +252,7 @@
             this.gridColumn7.FieldName = "ReceiverMobile";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 1;
+            this.gridColumn7.VisibleIndex = 2;
             // 
             // gridColumn9
             // 
@@ -254,7 +260,7 @@
             this.gridColumn9.FieldName = "ReceiverAddress";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 2;
+            this.gridColumn9.VisibleIndex = 3;
             // 
             // gridColumn25
             // 
@@ -262,7 +268,7 @@
             this.gridColumn25.FieldName = "Creator";
             this.gridColumn25.Name = "gridColumn25";
             this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 3;
+            this.gridColumn25.VisibleIndex = 4;
             // 
             // gridColumn10
             // 
@@ -272,7 +278,7 @@
             this.gridColumn10.FieldName = "CreateDate";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 4;
+            this.gridColumn10.VisibleIndex = 5;
             // 
             // xtraTabPage4
             // 
@@ -288,6 +294,7 @@
             this.gcPrinted.Location = new System.Drawing.Point(0, 0);
             this.gcPrinted.MainView = this.gvPrinted;
             this.gcPrinted.Name = "gcPrinted";
+            this.gcPrinted.ShowIndicator = true;
             this.gcPrinted.ShowRowNumber = true;
             this.gcPrinted.Size = new System.Drawing.Size(624, 227);
             this.gcPrinted.TabIndex = 6;
@@ -301,6 +308,7 @@
             this.gvPrinted.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(80)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.gvPrinted.Appearance.SelectedRow.Options.UseBackColor = true;
             this.gvPrinted.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn19,
             this.gridColumn11,
             this.gridColumn12,
             this.gridColumn14,
@@ -322,7 +330,7 @@
             this.gridColumn11.FieldName = "ReceiverName";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 0;
+            this.gridColumn11.VisibleIndex = 1;
             // 
             // gridColumn12
             // 
@@ -330,7 +338,7 @@
             this.gridColumn12.FieldName = "ReceiverMobile";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 1;
+            this.gridColumn12.VisibleIndex = 2;
             // 
             // gridColumn14
             // 
@@ -338,7 +346,7 @@
             this.gridColumn14.FieldName = "ReceiverAddress";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 2;
+            this.gridColumn14.VisibleIndex = 3;
             // 
             // gridColumn26
             // 
@@ -346,7 +354,7 @@
             this.gridColumn26.FieldName = "Creator";
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 3;
+            this.gridColumn26.VisibleIndex = 4;
             // 
             // gridColumn15
             // 
@@ -356,7 +364,7 @@
             this.gridColumn15.FieldName = "CreateDate";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 4;
+            this.gridColumn15.VisibleIndex = 5;
             // 
             // gridColumn27
             // 
@@ -364,7 +372,7 @@
             this.gridColumn27.FieldName = "PrintCnt";
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 5;
+            this.gridColumn27.VisibleIndex = 6;
             // 
             // tabDetail
             // 
@@ -437,6 +445,14 @@
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 1;
             // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "成本";
+            this.gridColumn6.FieldName = "CostPrice";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 2;
+            // 
             // gridColumn18
             // 
             this.gridColumn18.Caption = "售价";
@@ -469,7 +485,7 @@
             this.gridColumn20.FieldName = "CreateDate";
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 7;
+            this.gridColumn20.VisibleIndex = 6;
             // 
             // pnlDetail
             // 
@@ -496,13 +512,29 @@
             this.collapsibleSplitter1.UseAnimations = false;
             this.collapsibleSplitter1.VisualStyle = Ultra.Surface.Controls.VisualStyles.Mozilla;
             // 
-            // gridColumn6
+            // gridColumn8
             // 
-            this.gridColumn6.Caption = "成本";
-            this.gridColumn6.FieldName = "CostPrice";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn8.Caption = "订单号";
+            this.gridColumn8.FieldName = "TradeNo";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 0;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "订单号";
+            this.gridColumn13.FieldName = "TradeNo";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 0;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "订单号";
+            this.gridColumn19.FieldName = "TradeNo";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 0;
             // 
             // MainView
             // 
@@ -582,6 +614,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
 
     }
 }

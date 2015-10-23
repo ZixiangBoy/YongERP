@@ -48,8 +48,10 @@ namespace Ultra.Trade {
                 return;
             }
             if (EditMode == Ultra.Web.Core.Enums.EnViewEditMode.New) {
+
                 var trdnew = new t_trade() {
                     Guid = GuidKey,
+                    TradeNo = Ultra.Trade.Common.GetSerialNo("销售单"),
                     ReceiverName = memgcEdt.GetSelectedValue().ReceiverName,
                     ReceiverMobile = memgcEdt.GetSelectedValue().ReceiverMobile,
                     ReceiverAddress = memgcEdt.GetSelectedValue().ReceiverAddress,
@@ -63,7 +65,7 @@ namespace Ultra.Trade {
                     try {
                         db.BeginTransaction();
                         db.Save(trdnew);
-                        odrs.ForEach(k => db.Save(k));
+                        odrs.ForEach(k => { k.Guid = Guid.NewGuid(); db.Save(k); });
                         db.CompleteTransaction();
                     } catch (Exception) {
                         db.AbortTransaction();
